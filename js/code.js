@@ -1,17 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-const clickSound = new Audio('audio/switch-light-04-82204.mp3');
-const winSound = new Audio('audio/marimba-win-b-3-209679.mp3');
-const loseSound = new Audio('audio/fail-144746.mp3');
+    const clickSound = new Audio('audio/switch-light-04-82204.mp3');
+    const winSound = new Audio('audio/marimba-win-b-3-209679.mp3');
+    const loseSound = new Audio('audio/fail-144746.mp3');
 
     const game = () => {
-
         let playerScore = 0;
         let computerScore = 0;
         let moves = 0;
 
         const playGame = () => {
-
             const rockBtn = document.querySelector('.rock');
             const paperBtn = document.querySelector('.paper');
             const scissorBtn = document.querySelector('.scissor');
@@ -19,11 +16,8 @@ const loseSound = new Audio('audio/fail-144746.mp3');
             const computerOptions = ['rock', 'paper', 'scissors'];
 
             playerOptions.forEach(option => {
-                
                 option.addEventListener('click', function () {
-
                     clickSound.play();
-
                     const movesLeft = document.querySelector('.movesleft');
                     moves++;
                     movesLeft.innerText = `Лишилось кроків: ${10 - moves}`;
@@ -36,64 +30,51 @@ const loseSound = new Audio('audio/fail-144746.mp3');
                     if (moves === 10) {
                         gameOver(playerOptions, movesLeft);
                     }
-
                 });
-
             });
-
-        }
+        };
 
         const winner = (player, computer) => {
-
             const result = document.querySelector('.result');
             const playerScoreBoard = document.querySelector('.p-count');
             const computerScoreBoard = document.querySelector('.c-count');
 
             if (player === computer) {
-
                 result.textContent = 'Нічия';
-
             } else if (player === 'rock') {
-
                 if (computer === 'paper') {
-                    result.textContent = 'Бот +1';
+                    result.textContent = 'Бот обрав папір, бот +1';
                     computerScore++;
                     computerScoreBoard.textContent = computerScore;
                 } else {
-                    result.textContent = 'Ви +1!';
+                    result.textContent = 'Бот обрав ножиці, ви +1!';
                     playerScore++;
                     playerScoreBoard.textContent = playerScore;
                 }
-                
             } else if (player === 'scissor') {
-
                 if (computer === 'rock') {
-                    result.textContent = 'Бот +1';
+                    result.textContent = 'Бот обрав камінь, бот +1';
                     computerScore++;
                     computerScoreBoard.textContent = computerScore;
                 } else {
-                    result.textContent = 'Ви +1!';
+                    result.textContent = 'Бот обрав папір, ви +1!';
                     playerScore++;
                     playerScoreBoard.textContent = playerScore;
                 }
-
             } else if (player === 'paper') {
-
                 if (computer === 'scissor') {
-                    result.textContent = 'Бот +1';
+                    result.textContent = 'Бот обрав ножиці, бот +1';
                     computerScore++;
                     computerScoreBoard.textContent = computerScore;
                 } else {
-                    result.textContent = 'Ви +1!';
+                    result.textContent = 'Бот обрав камінь, ви +1!';
                     playerScore++;
                     playerScoreBoard.textContent = playerScore;
                 }
-
             }
-        }
+        };
 
         const gameOver = (playerOptions, movesLeft) => {
-
             const chooseMove = document.querySelector('.move');
             const result = document.querySelector('.result');
             const reloadBtn = document.querySelector('.reload');
@@ -125,10 +106,10 @@ const loseSound = new Audio('audio/fail-144746.mp3');
             reloadBtn.addEventListener('click', () => {
                 window.location.reload();
             });
-        }
+        };
 
         playGame();
-    }
+    };
 
     game();
 });
