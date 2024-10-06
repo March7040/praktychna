@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <link rel= "stylesheet" href= "fonts/css/line-awesome.css" >
-    <link rel="icon" href="images/rock-paper-scissors (1).png" rel = "icon">
+    <link rel="stylesheet" href="fonts/css/line-awesome.css">
+    <link rel="icon" href="images/rock-paper-scissors (1).png" rel="icon">
     <title>Камінь-Ножиці-Папір</title>
-
 </head>
 
 <body>
 
     <section class="game">
-       
         <div class="title">Камінь-Ножиці-Папір</div>
         
         <div class="score">
-
             <div class="playerScore">
                 <h2>Гравець</h2>
                 <p class="p-count count">0</p>
@@ -27,7 +23,6 @@
                 <h2>Бот</h2>
                 <p class="c-count count">0</p>
             </div>
-
         </div>
 
         <div class="options">
@@ -37,15 +32,43 @@
         </div>
 
         <div class="move">Зробіть вибір</div>
-
         <div class="movesleft">Лишилось кроків: 10 </div>
         
         <div class="result"></div>
         
         <button class="reload"></button>
+        
+        <button class="question" onclick="toggleModal()">
+            <i class="las la-question-circle"></i>
+        </button>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal()">&times;</span>
+                <h2>Правила гри</h2>
+                <p>Гра відбувається в декілька раундів. У кожному раунді кожен з учасників обирає один із трьох предметів:
+                     камінь, ножиці або папір. Результат раунду ґрунтується на предметах, обраних суперниками: 
+                     камінь перемагає ножиці, ножиці перемагають папір, а папір перемагає камінь.</p>
+            </div>
+        </div>
+
     </section>
     
     <script src="js/code.js"></script>
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = modal.style.display === "block" ? "none" : "block";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 </html>
+
