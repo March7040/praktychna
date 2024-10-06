@@ -1,0 +1,119 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #5b305a;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    background: #723971;
+    box-shadow: 0 0 30px #361235;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    font-size: 65px;
+}
+
+.score {
+    background: #e49756;
+    border-radius: 15px;
+    display: flex;
+    text-align: center;
+    width: 300px;
+    justify-content: space-evenly;
+}
+
+.move {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.movesleft {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.p-count, .c-count {
+    background: #8c450a;
+    text-shadow: 0 0 20px #f3d1a2;
+    box-shadow: 0 0 30px #f3d1a2;
+    text-align: center;
+    font-size: 24px;
+    width: 100px;
+}
+
+.options {
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+    margin-top: 32px;
+}
+
+.rock, .paper, .scissor {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.rock i, .paper i, .scissor i {
+    font-size: 100px;
+    color: #ffffff;
+    background: #e04b5a;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.rock i:hover, .paper i:hover, .scissor i:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #9a4c68;
+    box-shadow: 0 0 30px #9a4c68;
+    background: #e49756;
+    transform: scale(1.1);
+}
+
+.reload {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+    display: none;
+    margin-top: 64px;
+    padding: 29px;
+    background: #9a4c68;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+
+.reload:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #9a4c68;
+    box-shadow: 0 0 30px #9a4c68;
+    background: #e49756;
+    transform: scale(1.1);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 19px;
+}
